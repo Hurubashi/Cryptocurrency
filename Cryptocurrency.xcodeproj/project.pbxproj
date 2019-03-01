@@ -8,22 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		6F71B54C2229B4420022A2FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F71B54B2229B4420022A2FE /* AppDelegate.swift */; };
-		6F71B54E2229B4420022A2FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F71B54D2229B4420022A2FE /* ViewController.swift */; };
-		6F71B5512229B4420022A2FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F71B54F2229B4420022A2FE /* Main.storyboard */; };
-		6F71B5542229B4420022A2FE /* Cryptocurrency.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6F71B5522229B4420022A2FE /* Cryptocurrency.xcdatamodeld */; };
 		6F71B5562229B4450022A2FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F71B5552229B4450022A2FE /* Assets.xcassets */; };
 		6F71B5592229B4450022A2FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F71B5572229B4450022A2FE /* LaunchScreen.storyboard */; };
+		6F71B56D2229B6E60022A2FE /* CryptoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F71B56B2229B6E60022A2FE /* CryptoListVC.swift */; };
+		6F71B56E2229B6E60022A2FE /* CryptoListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F71B56C2229B6E60022A2FE /* CryptoListVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6F71B5482229B4420022A2FE /* Cryptocurrency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cryptocurrency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F71B54B2229B4420022A2FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6F71B54D2229B4420022A2FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6F71B5502229B4420022A2FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6F71B5532229B4420022A2FE /* Cryptocurrency.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cryptocurrency.xcdatamodel; sourceTree = "<group>"; };
 		6F71B5552229B4450022A2FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F71B5582229B4450022A2FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6F71B55A2229B4450022A2FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F71B56B2229B6E60022A2FE /* CryptoListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListVC.swift; sourceTree = "<group>"; };
+		6F71B56C2229B6E60022A2FE /* CryptoListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CryptoListVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +54,70 @@
 		6F71B54A2229B4420022A2FE /* Cryptocurrency */ = {
 			isa = PBXGroup;
 			children = (
-				6F71B54B2229B4420022A2FE /* AppDelegate.swift */,
-				6F71B54D2229B4420022A2FE /* ViewController.swift */,
-				6F71B54F2229B4420022A2FE /* Main.storyboard */,
+				6F71B5612229B56F0022A2FE /* App */,
+				6F71B5622229B57E0022A2FE /* Service */,
+				6F71B5642229B5B50022A2FE /* Model */,
+				6F71B5652229B5C00022A2FE /* ViewModel */,
+				6F71B5632229B5A20022A2FE /* View */,
+				6F71B5602229B5570022A2FE /* SupportFiles */,
+			);
+			path = Cryptocurrency;
+			sourceTree = "<group>";
+		};
+		6F71B5602229B5570022A2FE /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
 				6F71B5552229B4450022A2FE /* Assets.xcassets */,
 				6F71B5572229B4450022A2FE /* LaunchScreen.storyboard */,
 				6F71B55A2229B4450022A2FE /* Info.plist */,
-				6F71B5522229B4420022A2FE /* Cryptocurrency.xcdatamodeld */,
 			);
-			path = Cryptocurrency;
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		6F71B5612229B56F0022A2FE /* App */ = {
+			isa = PBXGroup;
+			children = (
+				6F71B54B2229B4420022A2FE /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		6F71B5622229B57E0022A2FE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		6F71B5632229B5A20022A2FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6F71B5662229B61C0022A2FE /* CryptoList */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6F71B5642229B5B50022A2FE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6F71B5652229B5C00022A2FE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6F71B5662229B61C0022A2FE /* CryptoList */ = {
+			isa = PBXGroup;
+			children = (
+				6F71B56B2229B6E60022A2FE /* CryptoListVC.swift */,
+				6F71B56C2229B6E60022A2FE /* CryptoListVC.xib */,
+			);
+			path = CryptoList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +180,7 @@
 			files = (
 				6F71B5592229B4450022A2FE /* LaunchScreen.storyboard in Resources */,
 				6F71B5562229B4450022A2FE /* Assets.xcassets in Resources */,
-				6F71B5512229B4420022A2FE /* Main.storyboard in Resources */,
+				6F71B56E2229B6E60022A2FE /* CryptoListVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +191,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F71B54E2229B4420022A2FE /* ViewController.swift in Sources */,
 				6F71B54C2229B4420022A2FE /* AppDelegate.swift in Sources */,
-				6F71B5542229B4420022A2FE /* Cryptocurrency.xcdatamodeld in Sources */,
+				6F71B56D2229B6E60022A2FE /* CryptoListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6F71B54F2229B4420022A2FE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6F71B5502229B4420022A2FE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6F71B5572229B4450022A2FE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -287,7 +331,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Cryptocurrency/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Cryptocurrency/SupportFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +348,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Cryptocurrency/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Cryptocurrency/SupportFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -338,19 +382,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		6F71B5522229B4420022A2FE /* Cryptocurrency.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				6F71B5532229B4420022A2FE /* Cryptocurrency.xcdatamodel */,
-			);
-			currentVersion = 6F71B5532229B4420022A2FE /* Cryptocurrency.xcdatamodel */;
-			path = Cryptocurrency.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 6F71B5402229B4420022A2FE /* Project object */;
 }
