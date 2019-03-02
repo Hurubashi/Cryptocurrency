@@ -11,7 +11,11 @@
 		6F71B5562229B4450022A2FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F71B5552229B4450022A2FE /* Assets.xcassets */; };
 		6F71B5592229B4450022A2FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F71B5572229B4450022A2FE /* LaunchScreen.storyboard */; };
 		6F71B56D2229B6E60022A2FE /* CryptoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F71B56B2229B6E60022A2FE /* CryptoListVC.swift */; };
-		6F71B56E2229B6E60022A2FE /* CryptoListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F71B56C2229B6E60022A2FE /* CryptoListVC.xib */; };
+		6F71B570222AA3280022A2FE /* CryptoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F71B56F222AA3280022A2FE /* CryptoService.swift */; };
+		6F71B572222AA3540022A2FE /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F71B571222AA3540022A2FE /* Currency.swift */; };
+		6F71B57A222AB0530022A2FE /* CryptoListVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F71B579222AB0530022A2FE /* CryptoListVC.storyboard */; };
+		6F71B57C222ABE230022A2FE /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F71B57B222ABE230022A2FE /* ApiError.swift */; };
+		6F71B57E222AC9380022A2FE /* CyproViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F71B57D222AC9380022A2FE /* CyproViewModel.swift */; };
 		ECF78A5AF826A9A2D665EC95 /* Pods_Cryptocurrency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4C5F80B5DA720EB0916FA5E /* Pods_Cryptocurrency.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,7 +27,11 @@
 		6F71B5582229B4450022A2FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6F71B55A2229B4450022A2FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F71B56B2229B6E60022A2FE /* CryptoListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListVC.swift; sourceTree = "<group>"; };
-		6F71B56C2229B6E60022A2FE /* CryptoListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CryptoListVC.xib; sourceTree = "<group>"; };
+		6F71B56F222AA3280022A2FE /* CryptoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoService.swift; sourceTree = "<group>"; };
+		6F71B571222AA3540022A2FE /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		6F71B579222AB0530022A2FE /* CryptoListVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CryptoListVC.storyboard; sourceTree = "<group>"; };
+		6F71B57B222ABE230022A2FE /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		6F71B57D222AC9380022A2FE /* CyproViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CyproViewModel.swift; sourceTree = "<group>"; };
 		76FA79CD71B5EB094CE395D2 /* Pods-Cryptocurrency.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cryptocurrency.debug.xcconfig"; path = "Target Support Files/Pods-Cryptocurrency/Pods-Cryptocurrency.debug.xcconfig"; sourceTree = "<group>"; };
 		A4C5F80B5DA720EB0916FA5E /* Pods_Cryptocurrency.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cryptocurrency.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -61,6 +69,7 @@
 		6F71B54A2229B4420022A2FE /* Cryptocurrency */ = {
 			isa = PBXGroup;
 			children = (
+				6F71B54B2229B4420022A2FE /* AppDelegate.swift */,
 				6F71B5612229B56F0022A2FE /* App */,
 				6F71B5622229B57E0022A2FE /* Service */,
 				6F71B5642229B5B50022A2FE /* Model */,
@@ -84,7 +93,6 @@
 		6F71B5612229B56F0022A2FE /* App */ = {
 			isa = PBXGroup;
 			children = (
-				6F71B54B2229B4420022A2FE /* AppDelegate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -92,6 +100,8 @@
 		6F71B5622229B57E0022A2FE /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				6F71B56F222AA3280022A2FE /* CryptoService.swift */,
+				6F71B57B222ABE230022A2FE /* ApiError.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -107,6 +117,7 @@
 		6F71B5642229B5B50022A2FE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6F71B571222AA3540022A2FE /* Currency.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -114,6 +125,7 @@
 		6F71B5652229B5C00022A2FE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				6F71B57D222AC9380022A2FE /* CyproViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -122,7 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				6F71B56B2229B6E60022A2FE /* CryptoListVC.swift */,
-				6F71B56C2229B6E60022A2FE /* CryptoListVC.xib */,
+				6F71B579222AB0530022A2FE /* CryptoListVC.storyboard */,
 			);
 			path = CryptoList;
 			sourceTree = "<group>";
@@ -133,7 +145,6 @@
 				76FA79CD71B5EB094CE395D2 /* Pods-Cryptocurrency.debug.xcconfig */,
 				33ABC7671C41E2654F8A3FFB /* Pods-Cryptocurrency.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -206,8 +217,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F71B5592229B4450022A2FE /* LaunchScreen.storyboard in Resources */,
+				6F71B57A222AB0530022A2FE /* CryptoListVC.storyboard in Resources */,
 				6F71B5562229B4450022A2FE /* Assets.xcassets in Resources */,
-				6F71B56E2229B6E60022A2FE /* CryptoListVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,7 +280,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F71B572222AA3540022A2FE /* Currency.swift in Sources */,
 				6F71B54C2229B4420022A2FE /* AppDelegate.swift in Sources */,
+				6F71B57E222AC9380022A2FE /* CyproViewModel.swift in Sources */,
+				6F71B570222AA3280022A2FE /* CryptoService.swift in Sources */,
+				6F71B57C222ABE230022A2FE /* ApiError.swift in Sources */,
 				6F71B56D2229B6E60022A2FE /* CryptoListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
