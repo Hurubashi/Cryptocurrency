@@ -16,7 +16,7 @@ class CryptoConverterModel {
     let firstCurrency = BehaviorRelay(value: Currency(name: "mockValue", symbol: "mockValue", price: 0))
     let secondCurrency = BehaviorRelay(value: Currency(name: "USD", symbol: "USD", price: 1))
     
-    let firstAmount = BehaviorRelay(value: "0.0")
+    let firstAmount = BehaviorRelay(value: "")
     let secondAmount = BehaviorRelay(value: "")
     
     let keyboardObserver = PublishSubject<String>()
@@ -36,8 +36,8 @@ class CryptoConverterModel {
             let current = self?.firstAmount.value ?? ""
             if let newElem = event.element {
                 if newElem == "CE" {
-                    self?.firstAmount.accept("0.0")
-                } else if (current == "0.0" || current == "0"), newElem != "." {
+                    self?.firstAmount.accept("")
+                } else if (current == "0"), newElem != "." {
                     self?.firstAmount.accept(newElem)
                 } else if current.count < 10 , !(newElem == "0" && current == "0"),
                     !(current.contains(".") && newElem == ".") {
