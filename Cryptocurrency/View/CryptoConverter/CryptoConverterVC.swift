@@ -23,7 +23,7 @@ class CryptoConverterVC: UIViewController {
     @IBOutlet weak var arrowView: UIView!
     
     let viewModel = CryptoConverterModel()
-    let bag = DisposeBag()
+    private let bag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +32,10 @@ class CryptoConverterVC: UIViewController {
         setUpCollectionView()
     }
 
-    func setUpUI() {
+    // MARK: - Set up UI
+    private func setUpUI() {
         
+        // Creating Gesture to Switch currencies and bind to model
         let tap = UITapGestureRecognizer()
         arrowView.addGestureRecognizer(tap)
         
@@ -41,6 +43,7 @@ class CryptoConverterVC: UIViewController {
             .bind(to: viewModel.valueSwitcher)
             .disposed(by: bag)
         
+        // Binds to Amounts Outlets
         viewModel.firstAmount.bind {
             [weak self] elem in
             self?.firstCurrencyAmount.text = elem
@@ -53,6 +56,7 @@ class CryptoConverterVC: UIViewController {
         }
         .disposed(by: bag)
         
+        // Binds to Currency info
         viewModel.firstCurrency.bind {
             [weak self] currency in
             self?.firstCurrencyName.text = currency.symbol
@@ -69,13 +73,13 @@ class CryptoConverterVC: UIViewController {
         
     }
     
-    // MARK: - CollectionView Keyboard
+    // MARK: - Creating Keyboard with CollectionView
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let items = BehaviorRelay(value: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "CE", "0", "."])
+    private let items = BehaviorRelay(value: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "CE", "0", "."])
     
-    func setUpCollectionView() {
+    private func setUpCollectionView() {
         collectionView.delegate = self
         collectionView.register(UINib(nibName: "ConverterCell", bundle: nil), forCellWithReuseIdentifier: "ConverterCell")
         
@@ -101,6 +105,7 @@ class CryptoConverterVC: UIViewController {
 
 }
 
+// CollectionView cell size calculation
 extension CryptoConverterVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
