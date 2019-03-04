@@ -31,54 +31,62 @@ class CryptoConverterModel {
     // Manage CollectionView Keyboard
     func subscribeToKeyboardObserver() {
         keyboardObserver
-            .subscribe {
-                [weak self] event in
-                let current = self?.firstAmount.value ?? ""
-                if let newElem = event.element {
-                    if newElem == "CE" {
-                        self?.firstAmount.accept("0.0")
-                    } else if (current == "0.0" || current == "0"), newElem != "." {
-                        self?.firstAmount.accept(newElem)
-                    } else if current.count < 10 , !(newElem == "0" && current == "0"),
-                        !(current.contains(".") && newElem == ".") {
-                        self?.firstAmount.accept(current + newElem)
-                    }
+        .subscribe {
+            [weak self] event in
+            let current = self?.firstAmount.value ?? ""
+            if let newElem = event.element {
+                if newElem == "CE" {
+                    self?.firstAmount.accept("0.0")
+                } else if (current == "0.0" || current == "0"), newElem != "." {
+                    self?.firstAmount.accept(newElem)
+                } else if current.count < 10 , !(newElem == "0" && current == "0"),
+                    !(current.contains(".") && newElem == ".") {
+                    self?.firstAmount.accept(current + newElem)
                 }
             }
-            .disposed(by: bag)
+        }
+        .disposed(by: bag)
     }
     
     // Calculate second currencyAmount based on firstAmount
     func bindFirstAmountToSecond() {
         firstAmount.map {
             [weak self] elem in
-            let num = ((Double(elem) ?? 0) * (self?.firstCurrency.value.price ?? 0) )
-            return String(num)
+            var num = 0.0
+            if self?.secondCurrency.value.name == "USD" {
+                num = ((Double(elem) ?? 0) * (self?.firstCurrency.value.price ?? 0) )
+            } else {
+                if (self?.firstCurrency.value.price ?? 0) < 1.0 {
+                    num = ((Double(elem) ?? 0) * (self?.secondCurrency.value.price ?? 0) )
+                } else {
+                    num = ((Double(elem) ?? 0) / (self?.secondCurrency.value.price ?? 1) )
+                }
             }
-            .bind(to: secondAmount)
-            .disposed(by: bag)
+            return String(num)
+        }
+        .bind(to: secondAmount)
+        .disposed(by: bag)
     }
     
     // Subscribe to valueSwitcher that binded to arrowView,
     // upon tap gesture switch currencies and amounts
     func subscribeToValueSwitcher() {
         valueSwitcher
-            .subscribe(onNext: {
-                [weak self] recognizer in
-                
-                if let first = self?.firstCurrency.value,
-                    let second = self?.secondCurrency.value {
-                    self?.firstCurrency.accept(second)
-                    self?.secondCurrency.accept(first)
-                }
-                
-                if let firstAmount = self?.firstAmount.value,
-                    let secondAmount = self?.secondAmount.value {
-                    self?.firstAmount.accept(secondAmount)
-                    self?.secondAmount.accept(firstAmount)
-                }
-            })
-            .disposed(by: bag)
+        .subscribe(onNext: {
+            [weak self] recognizer in
+            if let first = self?.firstCurrency.value,
+                let second = self?.secondCurrency.value {
+                self?.firstCurrency.accept(second)
+                self?.secondCurrency.accept(first)
+            }
+            
+            if let firstAmount = self?.firstAmount.value,
+                let secondAmount = self?.secondAmount.value {
+                self?.firstAmount.accept(secondAmount)
+                self?.secondAmount.accept(firstAmount)
+            }
+        })
+        .disposed(by: bag)
     }
     
 }

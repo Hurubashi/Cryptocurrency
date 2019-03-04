@@ -59,6 +59,7 @@
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="Rnw-f9-HZ3" firstAttribute="leading" secondItem="AEl-Jd-jlH" secondAttribute="trailing" constant="10" id="95n-u6-3Y3"/>
+                                                        <constraint firstItem="AEl-Jd-jlH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="26Y-Rt-E7V" secondAttribute="leading" id="DhU-UX-jWi"/>
                                                         <constraint firstItem="Rnw-f9-HZ3" firstAttribute="centerY" secondItem="26Y-Rt-E7V" secondAttribute="centerY" id="QSm-cU-rWw"/>
                                                         <constraint firstAttribute="trailing" secondItem="Rnw-f9-HZ3" secondAttribute="trailing" constant="5" id="qMD-9V-ifd"/>
                                                         <constraint firstAttribute="bottom" secondItem="AEl-Jd-jlH" secondAttribute="bottom" constant="5" id="qgS-Tm-UUQ"/>
@@ -114,6 +115,7 @@
                                                         <constraint firstAttribute="bottom" secondItem="69o-F5-z0s" secondAttribute="bottom" constant="5" id="VPG-XO-Xpt"/>
                                                         <constraint firstItem="pvY-vt-yRz" firstAttribute="leading" secondItem="3Zo-j2-fBJ" secondAttribute="leading" constant="5" id="fOf-wD-8so"/>
                                                         <constraint firstItem="pvY-vt-yRz" firstAttribute="centerY" secondItem="3Zo-j2-fBJ" secondAttribute="centerY" id="i0t-dz-zjJ"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="69o-F5-z0s" secondAttribute="trailing" id="pgV-Fn-OME"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
