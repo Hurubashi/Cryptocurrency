@@ -17,7 +17,7 @@ class CryptoService {
     private var cryptoListURL = URL(fileURLWithPath: "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest")
     private let apiKey = "5535990c-2062-4c5d-b476-ffdb3096ab70"
     private let start = URLQueryItem(name: "start", value: "1")
-    private let limit = URLQueryItem(name: "limit", value: "5")
+    private let limit = URLQueryItem(name: "limit", value: "100")
     private let convert = URLQueryItem(name: "convert", value: "USD")
     
     
@@ -56,6 +56,7 @@ class CryptoService {
                     }
                     return currency
                 } else {
+                    print("ELSE DETKA")
                     throw ApiError.wentWrong
                 }
             }

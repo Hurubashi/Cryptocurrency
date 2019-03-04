@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxCocoa
 
 struct CurrencyWrapper: Decodable {
     
@@ -33,6 +34,11 @@ struct Currency {
     let symbol: String
     let price: Double
     
+    init(name: String, symbol: String, price: Double) {
+        self.name = name
+        self.symbol = symbol
+        self.price = price
+    }
     init(with data: CurrencyWrapper.Currency) {
         name = data.name
         symbol = data.symbol

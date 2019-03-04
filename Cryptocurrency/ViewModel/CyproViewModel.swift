@@ -6,7 +6,6 @@
 //  Copyright © 2019 Max Rybak. All rights reserved.
 //
 
-import Foundation
 import RxSwift
 import RxCocoa
 
@@ -16,7 +15,7 @@ class CryptoViewModel {
     private let bag = DisposeBag()
     
     let currencies = BehaviorRelay<[Currency]>(value: [])
-    
+
     init() {
         let currencyFetcher = cryptoService.fetchCypto()
         
@@ -26,7 +25,6 @@ class CryptoViewModel {
                 self?.currencies.accept(newCurrencies)
             }
         }.disposed(by: bag)
-        
         
     }
     
